@@ -12,11 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('movies', function (Blueprint $table) {
+            // Edit the database structure to hold movie data.
             $table->id();
             $table->string('title');
-            $table->string('genre');
-            $table->integer('release_year');
-            $table->integer('imdb_id')->unique();
+            $table->text('description')->nullable();
+            $table->text('genre')->nullable();
+            $table->text('rating')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

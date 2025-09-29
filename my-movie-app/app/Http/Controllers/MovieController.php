@@ -12,7 +12,8 @@ class MovieController extends Controller
      */
     public function index()
     {
-        //
+        $movies = Movie::all(); // fetch all movies
+        return view('movies', compact('movies'));
     }
 
     /**
@@ -30,6 +31,8 @@ class MovieController extends Controller
     {
         //
     }
+
+    
 
     /**
      * Display the specified resource.
